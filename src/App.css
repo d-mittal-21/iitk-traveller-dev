@@ -1,3 +1,13 @@
+:root {
+  --red: hsl(350, 70%, 55%);
+  --teal: hsl(231, 70%, 62%);
+  --white: hsl(334, 7%, 95%);
+  --undefined: hsl(334, 7%, 95%);
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
 .App {
   text-align: center;
 }
@@ -15,17 +25,106 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+/* .logoHeader {
+  max-width:100%;
+  max-height:100%;
+  align-items: left;
+} */
+
+.logo {
+  height: 10vh;
+  margin-left: -10vw;
+  margin-right: 10vw;
+}
+
+.pane{
+  height: 85vh;
+  background-color: hsl(225, 6%, 25%);;
+}
+
+.inputCode {
+  padding-top: 5vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.fields {
+  margin: 2vh 5vw 0 5vw;
+  display: flex;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.btns button {
+  margin-top: 2vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: var(--bgFormEls);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.btn-three {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+.btn-three::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(35, 53, 49, 0.527);
+  transition: all 0.3s;
+}
+.btn-three:hover::before {
+  opacity: 0 ;
+  transform: scale(0.5,0.5);
+}
+.btn-three::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.5);
+  transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+  opacity: 1;
+  transform: scale(1,1);
+}
+
+.footer {
+  background-color: #282c34;
+  height: 3vh;
+  color: rgb(201, 100, 100);
+  text-align: right;
+  padding-top: 2vh;
+  padding-right: 3vw;
 }
 
 @keyframes App-logo-spin {
